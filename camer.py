@@ -1,9 +1,13 @@
 import cv2 as cv
 camera = cv.VideoCapture(0)
 if camera.isOpened() :
-    frame,status  =  camera.read()
+    
     while True:
+        ret,frame  =  camera.read()
+        cv.imshow("ff",frame)
+        if cv.waitKey(1) and 0xFF == ord('q'):
+            camera.release()
+            cv.destroyAllWindows()
 
-        cv.imshow("label",frame)
-        cv.waitKey(0)
-        camera.release()
+            break
+ 
