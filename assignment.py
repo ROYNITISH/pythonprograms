@@ -18,5 +18,5 @@ while True:
     cv.imshow('_frame',gray_frame)
     if cv.waitKey(1) & 0xFF == ord('m'):
         break
-    if 0xFF == ord('w') & cv.waitKey(1):
-        print("key press works")
+camera.release()
+cv.destroyAllWindows()
